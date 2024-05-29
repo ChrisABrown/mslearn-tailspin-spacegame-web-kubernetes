@@ -3,9 +3,11 @@ trigger:
 
 variables:
   buildConfiguration: 'Release'
+  leaderboardRepositor: 'leaderboard'
   webRepository: 'web'
   tag: '$(Build.BuildId)'
-
+  imagePullSecret: 'secret'
+  
 stages:
 - stage: 'Build'
   displayName: 'Build and push'
@@ -76,7 +78,7 @@ stages:
               connectionType: azureResourceManager
               azureSubscriptionConnection: 'Kubernetes Cluster Connection'
               azureResourceGroup: 'tailspin-space-game-rg'
-              kubernetesCluster: 'tailspinspacegame-24591'
+              kubernetesCluster: 'tailspinspacegame-17258'
               namespace: 'default'
               manifests: |
                 $(Pipeline.Workspace)/manifests/deployment.yml
