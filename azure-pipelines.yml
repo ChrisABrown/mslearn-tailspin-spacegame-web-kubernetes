@@ -67,8 +67,8 @@ stages:
               secretName: $(imagePullSecret)
               dockerRegistryEndpoint: 'Container Registry Connection'
               azureSubscriptionConnection: 'Kubernetes Cluster Connection'
-              azureResourceGroup: 'tailspin-space-game-rg'
-              kubernetesCluster: 'tailspinspacegame-17258'
+              azureResourceGroup: 'MC_tailspin-space-game-rg_tailspinspacegame-30663_westus2'
+              kubernetesCluster: 'tailspinspacegame-30663'
               namespace: 'default'
           
           - task: KubernetesManifest@1
@@ -77,8 +77,8 @@ stages:
               action: deploy
               connectionType: azureResourceManager
               azureSubscriptionConnection: 'Kubernetes Cluster Connection'
-              azureResourceGroup: 'tailspin-space-game-rg'
-              kubernetesCluster: 'tailspinspacegame-17258'
+              azureResourceGroup: 'MC_tailspin-space-game-rg_tailspinspacegame-30663_westus2'
+              kubernetesCluster: 'tailspinspacegame-30663'
               namespace: 'default'
               manifests: |
                 $(Pipeline.Workspace)/manifests/deployment.yml
